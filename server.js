@@ -128,7 +128,6 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-const HOST = process.env.HOST || "192.168.1.10";
 
 app.listen(PORT, HOST, () => {
   console.log(`\n${"=".repeat(60)}`);
