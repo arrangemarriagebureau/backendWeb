@@ -66,6 +66,8 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/admin", require("./routes/admin"));
 app.use("/api/profiles", require("./routes/profile"));
 app.use("/api/inquiries", require("./routes/inquiry"));
+app.use("/api/access-requests", require("./routes/accessRequest"));
+app.use("/api/payment-settings", require("./routes/paymentSettings"));
 
 // Test Routes
 app.get("/", (req, res) => {
@@ -128,7 +130,7 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-const HOST = process.env.HOST || "192.168.1.10";
+const HOST = process.env.HOST || "192.168.2.107";
 
 app.listen(PORT, HOST, () => {
   console.log(`\n${"=".repeat(60)}`);
