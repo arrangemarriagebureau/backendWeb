@@ -130,23 +130,13 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
 const HOST = process.env.HOST || "192.168.2.107";
 
-app.listen(PORT, HOST, () => {
-  console.log(`\n${"=".repeat(60)}`);
-  console.log(`🚀 Server started on port ${PORT}`);
-  console.log(`📡 Accessible at: http://${HOST}:${PORT}`);
-  console.log(`${"=".repeat(60)}`);
-  console.log(`📋 Available Routes:`);
-  console.log(`   - POST http://${HOST}:${PORT}/api/auth/register`);
-  console.log(`   - POST http://${HOST}:${PORT}/api/auth/login`);
-  console.log(`   - GET  http://${HOST}:${PORT}/api/admin/users`);
-  console.log(`   - POST http://${HOST}:${PORT}/api/admin/create-profile`);
-  console.log(`   - GET  http://${HOST}:${PORT}/api/profiles`);
-  console.log(`   - GET  http://${HOST}:${PORT}/api/profiles/me`);
-  console.log(`   - POST http://${HOST}:${PORT}/api/profiles`);
-  console.log(`\n   Test Routes:`);
-  console.log(`   - GET  http://${HOST}:${PORT}/api/test/db`);
-  console.log(`   - GET  http://${HOST}:${PORT}/api/test/cors`);
-  console.log(`${"=".repeat(60)}\n`);
+
+app.listen(PORT, () => {
+  console.log("=".repeat(60));
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log("🌍 Environment:", process.env.NODE_ENV || "production");
+  console.log("=".repeat(60));
 });
