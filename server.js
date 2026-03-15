@@ -129,9 +129,18 @@ app.use((req, res) => {
   });
 });
 
+app.get("/api/ping", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Server is alive 🚀",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+  });
+});
+
 const PORT = process.env.PORT || 5000;
 
-const HOST = process.env.HOST || "192.168.2.107";
+const HOST = process.env.HOST || "192.168.113.251";
 
 
 app.listen(PORT, () => {
